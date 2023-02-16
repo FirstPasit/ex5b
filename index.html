@@ -60,8 +60,7 @@
 				t1 = t * (4/5);
 				u1 = "Kelvin";
 			}
-			   
-			   alert("Temperature is "+t1+" in "+u1);
+			document.getElementById("result").innerHTML = ("Temperature is " +t1+" in "+u1 );
 		}
 
 	    $(document).ready(function(){
@@ -69,6 +68,10 @@
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
 			   
+			   var chk = tempValidate(t);
+			   if(chk != null)return chk;
+
+			   var tc = tempCal(t,u);
 
 			});
 		});
